@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+
+    <title>{{ page.title }}</title>
+    {% if page.description %}<meta name="description" content="{{ page.description }}">{% endif %}
+    <meta name="author" content="{{ site.author.name }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Bootstrap CSS -->
+    <link href="{{ ASSET_PATH }}/bootstrap/css/style.css" rel="stylesheet">
+    <link href="{{ ASSET_PATH }}/bootstrap/resources/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- annoasso css -->
+    <link href="{{ ASSET_PATH }}/annoAsso/style.css" rel="stylesheet">
+    <!--[if lt IE 9]>
+      <script src="{{ ASSET_PATH }}/resources/respond/Respond.min.js"></script>
+    <![endif]-->
+
+    <link href="{{ BASE_PATH }}{{ site.JB.atom_path }}" type="application/atom+xml" rel="alternate" title="Sitewide ATOM Feed">
+    <link href="{{ BASE_PATH }}{{ site.JB.rss_path }}" type="application/rss+xml" rel="alternate" title="Sitewide RSS Feed">
+
+  </head>
+
+  <body>
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <ul class="pull-left nav navbar-nav">
+          <li><a href="/" class="navbar-brand">{{site.title}}</a></li>
+          <li><a href="#">Trouver un événement</a></li>
+          <li><a href="#">S'inscrire à la newsletter</a></li>
+        </ul>
+        <ul class="pull-right nav navbar-nav">
+          <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="btn btn-primary">Associations <span class="caret"></span></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Enregistrer un événement</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="/comment-enregistrer-un-evenement.html">Comment enregistrer un événement ?</a></li>
+            <li><a href="#">Foire aux questions</a></li>
+          </ul>
+        </li>
+          <li><a href="#">Aide</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="">
+      {{ content }}
+      <hr>
+      <footer>
+        <div class="learn-more">
+            <div class="container">
+              <div class="row">
+                <div class="col-md-4">
+                  <h3>Il manque un événement&nbsp;?</h3>
+                  <p>Vous avez connaissance d'un événement de la part d'une association que vous nous trouvez pas sur ce site&nbsp;? </p>
+                  <p><a href="#">Remplissez ce formulaire et nous contacterons l'association.</a></p>
+                </div>
+                <div class="col-md-4">
+                  <h3>Associations&nbsp;! Renseignez vos événements</h3>
+                  <p>Découvrez tous les avantages à avoir une page d'événement sur Annoasso.</p>
+                  <p><a href="comment-enregistrer-un-evenement.html">En savoir plus sur comment enregistrer un événement.</a></p>
+                </div>
+                <div class="col-md-4">
+                  <h3>Contact</h3>
+                  <p>Vous rencontrez une anomalie&nbsp;? Une erreur&nbsp;? </p>
+                  <p><a href="#">Contactez nous</a></p>
+                </div>
+            </div>
+          </div>
+        </div>
+        <p>
+          &copy; {{ site.time | date: '%Y' }} {{ site.author.name }}
+          <span class="pull-right text-muted">
+            powered by
+            <a href="http://dbtek.github.io/jekyll-bootstrap-3" target="_blank" title="The Definitive Jekyll Blogging Framework">Jekyll-Bootstrap-3</a>
+          </span>
+        </p>
+      </footer>
+    </div>
+
+    {% include JB/analytics %}
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  </body>
+</html>
